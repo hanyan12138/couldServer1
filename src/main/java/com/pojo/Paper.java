@@ -1,43 +1,41 @@
 package com.pojo;
 
 public class Paper {
-    private Long paperId;
+    private long paperId;
+    private String paperName;
+    private int paperNum;
+    private String paperDetail;
 
-    private String name;
-
-    private Integer number;
-
-    private String detail;
-
-    public Long getPaperId() {
+    public long getPaperId() {
         return paperId;
     }
 
-    public void setPaperId(Long paperId) {
+    public void setPaperId(long paperId) {
         this.paperId = paperId;
     }
 
-    public String getName() {
-        return name;
+    public String getPaperName() {
+        return paperName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setPaperName(String paperName) {
+        this.paperName = paperName;
     }
 
-    public Integer getNumber() {
-        return number;
+    public int getPaperNum() {
+        return paperNum;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setPaperNum(int paperNum) {
+        this.paperNum = paperNum;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getPaperDetail() {
+        return paperDetail;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail == null ? null : detail.trim();
+    public void setPaperDetail(String paperDetail) {
+        this.paperDetail = paperDetail;
     }
+
 }

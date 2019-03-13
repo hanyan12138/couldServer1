@@ -2,6 +2,7 @@ package com.controller;
 
 import com.pojo.Paper;
 import com.service.PaperService;
+import com.task.UpdateDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,8 @@ public class PaperController {
     public String list(Model model) {
         List<Paper> list = paperService.queryAllPaper();
         model.addAttribute("list", list);
+        UpdateDatabase updateDatabase=new UpdateDatabase();
+        updateDatabase.UpdateDatabase();
         return "allPaper";
     }
 
