@@ -29,7 +29,7 @@
 
         <!--数据库链接URL，用户名、密码 -->
 
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/hanyan?useUnicode=true" userId="root" password="970216">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/bendi?useUnicode=true" userId="root" password="970216">
 
         </jdbcConnection>
 
@@ -41,7 +41,7 @@
 
         <!-- 生成模型的包名和位置-->
 
-        <javaModelGenerator targetPackage="main.java.com.pojo" targetProject="src">
+        <javaModelGenerator targetPackage="com.pojo" targetProject="src/main/java">
 
             <property name="enableSubPackages" value="true"/>
 
@@ -51,7 +51,7 @@
 
         <!-- 生成映射文件的包名和位置-->
 
-        <sqlMapGenerator targetPackage="main.resources.mapper" targetProject="src">
+        <sqlMapGenerator targetPackage="resources.mapper" targetProject="src/main/">
 
             <property name="enableSubPackages" value="true"/>
 
@@ -59,7 +59,7 @@
 
         <!-- 生成DAO的包名和位置-->
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="main.java.com.dao" targetProject="src">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dao" targetProject="src/main/java">
 
             <property name="enableSubPackages" value="true"/>
 
@@ -67,10 +67,8 @@
 
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
 
-        <table tableName="getwrite" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="paper" domainObjectName="PaperNew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="tail" domainObjectName="Tail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="new_write" domainObjectName="Write" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="guance1" domainObjectName="Viewing" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="paper" domainObjectName="Paper" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 
 </generatorConfiguration>
