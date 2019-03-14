@@ -5,14 +5,14 @@ import com.pojo.View;
 import java.util.List;
 
 public interface ViewDao {
-    int addPaper(View view);
+    int addView(View view);
 
-    int deletePaperById(int id);
+    int deleteViewById(int id);
 
-    int updatePaper(View view);
+    int updateView(View view);
 
     View queryById(int id);
 
-    List<View> queryAllPaper();
+    List<View> queryAllView();
 
 }

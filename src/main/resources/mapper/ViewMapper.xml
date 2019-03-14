@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ViewDao">
+
+    <resultMap type="View" id="viewResultMap" >
+        <id property="id" column="id"/>
+        <result property="pressure" column="pressure"/>
+        <result property="temperature" column="temperature"/>
+        <result property="humidity" column="humidity"/>
+        <result property="co2" column="co2"/>
+        <result property="c2h2" column="c2h2"/>
+        <result property="time" column="time"/>
+    </resultMap>
+    <insert id="addView" parameterType="View">
+        INSERT INTO guance2(id,pressure,temperature,humidity,co2,c2h2,time) VALUE (#{id},#{pressure}, #{temperature}, #{humidity},#{co2}, #{c2h2}, #{time})
+    </insert>
+
+    <delete id="deletePaperById" parameterType="long">
+        DELETE FROM guance2 WHERE id=#{id}
+    </delete>
+
+    <update id="updatePaper" parameterType="Paper">
+        UPDATE guance2
+        SET pressure = #{pressure},temperature = #{temperature},humidity = #{humidity},co2 = #{co2},c2h2 = #{c2h2},time = #{time}
+        WHERE  paper_id = #{paperId}
+    </update>
+
+    <select id="queryById" resultType="Paper" parameterType="long">
+        SELECT id,pressure,temperature,humidity,co2,c2h2,time
+        FROM guance2
+        WHERE id=#{id}
+    </select>
+    <select id="queryAllPaper" resultMap="paperResultMap">
+        SELECT id,pressure,temperature,humidity,co2,c2h2,time
+        FROM guance2
+    </select>
+
+</mapper>

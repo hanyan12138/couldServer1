@@ -1,5 +1,6 @@
 package com.task;
 
+import com.service.ViewService;
 import org.fusesource.hawtbuf.Buffer;
 import org.fusesource.hawtbuf.UTF8Buffer;
 import org.fusesource.mqtt.client.*;
@@ -20,6 +21,10 @@ public class UpdateDatabase{
     public final static long RECONNECTION_ATTEMPT_MAX = 6;
     public final static long RECONNECTION_DELAY = 2000;
     public final static int SEND_BUFFER_SIZE = 2 * 1024 * 1024;// 发送最大缓冲为2M
+
+    @Autowired
+    private ViewService viewService;
+
 
     public static Topic[] getWrite() {     //得到要订阅的
         Topic[] get=new Topic[100];

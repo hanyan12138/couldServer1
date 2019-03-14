@@ -13,18 +13,18 @@ public class ViewServiceImpl implements ViewService {
     private ViewDao viewDao;
 
     @Override
-    public int addPaper(View view) {
-        return viewDao.addPaper(view);
+    public int addView(View view) {
+        return viewDao.addView(view);
     }
 
     @Override
-    public int deletePaperById(int id) {
-        return viewDao.deletePaperById(id);
+    public int deleteViewById(int id) {
+        return viewDao.deleteViewById(id);
     }
 
     @Override
-    public int updatePaper(View view) {
-        return viewDao.updatePaper(view);
+    public int updateView(View view) {
+        return viewDao.updateView(view);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ViewServiceImpl implements ViewService {
     }
 
     @Override
-    public List<View> queryAllPaper() {
-        return viewDao.queryAllPaper();
+    public List<View> queryAllView() {
+        return viewDao.queryAllView();
     }
 }
