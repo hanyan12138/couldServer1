@@ -1,5 +1,6 @@
 package com.task;
 
+import com.pojo.View;
 import com.service.ViewService;
 import org.fusesource.hawtbuf.Buffer;
 import org.fusesource.hawtbuf.UTF8Buffer;
@@ -8,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.sql.Date;
 
-@Component
+
+//@Component
 public class UpdateDatabase{
 
 
@@ -22,13 +25,11 @@ public class UpdateDatabase{
     public final static long RECONNECTION_DELAY = 2000;
     public final static int SEND_BUFFER_SIZE = 2 * 1024 * 1024;// 发送最大缓冲为2M
 
-    @Autowired
-    private ViewService viewService;
 
 
     public static Topic[] getWrite() {     //得到要订阅的
-        Topic[] get=new Topic[100];
-        for(int i=0;i<100;i++) {
+        Topic[] get=new Topic[5];
+        for(int i=0;i<5;i++) {
             String getstring[]=new String[100];
             getstring[i]="msg"+i;
             Topic topic=new Topic(getstring[i], QoS.EXACTLY_ONCE);
@@ -37,9 +38,13 @@ public class UpdateDatabase{
         return get;
 
     }
+    int counter=0;
+    //@Scheduled( fixedDelay = 600000)
+    public void UpdateDatabase(ViewService viewService) {
 
-    @Scheduled( fixedDelay = 600000)
-    public void UpdateDatabase() {
+        final ViewService viewService1;
+
+        viewService1 = viewService;
 
         try { // 创建MQTT对象
             MQTT mqtt = new MQTT();
@@ -87,9 +92,13 @@ public class UpdateDatabase{
                     write = payload;
                     writeid = topic;
 
-                    //使用string的方法将msg分离出来
+                    //使用string的方法将msg分离出来,插入数据库
                     String[] writes = write.split(",");
+                    View view = new View(Integer.parseInt(writes[0]),writes[1],writes[2],writes[3],writes[4],writes[5], Date.valueOf(writes[6]));
 
+                    if(viewService1.queryById(Integer.parseInt(writes[0]))==null){
+                        viewService1.addView(view);
+                    }
                     ack.run();
                 }
 

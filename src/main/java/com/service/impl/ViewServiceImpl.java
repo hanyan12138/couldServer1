@@ -4,9 +4,11 @@ import com.dao.ViewDao;
 import com.pojo.View;
 import com.service.ViewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ViewServiceImpl implements ViewService {
 
     @Autowired

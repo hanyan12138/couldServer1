@@ -18,22 +18,22 @@
         INSERT INTO guance2(id,pressure,temperature,humidity,co2,c2h2,time) VALUE (#{id},#{pressure}, #{temperature}, #{humidity},#{co2}, #{c2h2}, #{time})
     </insert>
 
-    <delete id="deletePaperById" parameterType="long">
+    <delete id="deleteViewById" parameterType="int">
         DELETE FROM guance2 WHERE id=#{id}
     </delete>
 
-    <update id="updatePaper" parameterType="Paper">
+    <update id="updateView" parameterType="View">
         UPDATE guance2
         SET pressure = #{pressure},temperature = #{temperature},humidity = #{humidity},co2 = #{co2},c2h2 = #{c2h2},time = #{time}
         WHERE  paper_id = #{paperId}
     </update>
 
-    <select id="queryById" resultType="Paper" parameterType="long">
+    <select id="queryById" resultType="View" parameterType="int">
         SELECT id,pressure,temperature,humidity,co2,c2h2,time
         FROM guance2
         WHERE id=#{id}
     </select>
-    <select id="queryAllPaper" resultMap="paperResultMap">
+    <select id="queryAllView" resultMap="viewResultMap">
         SELECT id,pressure,temperature,humidity,co2,c2h2,time
         FROM guance2
     </select>

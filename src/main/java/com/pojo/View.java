@@ -11,6 +11,16 @@ public class View {
     private String c2h2;
     private Date time;
 
+    public View(int id, String pressure, String temperature, String humidity, String co2, String c2h2, Date time) {
+        this.id = id;
+        this.pressure = pressure;
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.co2 = co2;
+        this.c2h2 = c2h2;
+        this.time = time;
+    }
+
     public int getId() {
         return id;
     }
