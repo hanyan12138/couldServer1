@@ -94,7 +94,14 @@ public class UpdateDatabase{
 
                     //使用string的方法将msg分离出来,插入数据库
                     String[] writes = write.split(",");
-                    View view = new View(Integer.parseInt(writes[0]),writes[1],writes[2],writes[3],writes[4],writes[5], Date.valueOf(writes[6]));
+                    View view = new View();
+                    view.setId( Integer.parseInt(writes[0]));
+                    view.setPressure(writes[1]);
+                    view.setTemperature(writes[2]);
+                    view.setHumidity(writes[3]);
+                    view.setCo2( writes[4]);
+                    view.setC2h2(writes[5]);
+                    view.setTime(Date.valueOf(writes[6]));
 
                     if(viewService1.queryById(Integer.parseInt(writes[0]))==null){
                         viewService1.addView(view);
