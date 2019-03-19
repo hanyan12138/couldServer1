@@ -142,6 +142,20 @@
       <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
       <version>1.1.1</version>
     </dependency>
+
+      <!-- 第五部分 上传下载需要设计到的jar包 -->
+      <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.6</version>
+    </dependency>
+
+    <dependency>
+        <groupId>commons-fileupload</groupId>
+        <artifactId>commons-fileupload</artifactId>
+        <version>1.4</version>
+   </dependency>
+
   </dependencies>
 
   <build>

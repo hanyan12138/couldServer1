@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ImgDao">
+    <resultMap type="Img" id="imgResultMap" >
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="img" column="img"/>
+    </resultMap>
+
+    <insert id="addImg" parameterType="Img">
+        INSERT INTO test_img(id,name,img) VALUE (#{id},#{name}, #{img})
+    </insert>
+
+    <delete id="deleteImgById" parameterType="int">
+        DELETE FROM test_img WHERE id=#{id}
+    </delete>
+
+    <update id="updateImg" parameterType="Img">
+        UPDATE test_img
+        SET NAME = #{name},img = #{img}
+        WHERE  id = #{id}
+    </update>
+
+    <select id="queryById" resultType="Img" parameterType="int">
+        SELECT id,name,img
+        FROM test_img
+        WHERE id=#{id}
+    </select>
+    <select id="queryAllImg" resultMap="imgResultMap">
+        SELECT id,name,img
+        FROM test_img
+    </select>
+
+</mapper>
