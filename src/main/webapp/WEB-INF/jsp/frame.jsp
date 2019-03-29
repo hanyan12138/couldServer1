@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <frameset cols="200,*">
-    <frame src="../html/a.html" frameborder="0" name="left"></frame>
+    <frame src="../html/daohang.html" frameborder="0" name="left"></frame>
     <frame src="base" frameborder="0" name="right"></frame>
 </frameset>
 </html>

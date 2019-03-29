@@ -97,11 +97,11 @@ public class UpdateDatabase{
                     String[] writes = write.split(",");
                     View view = new View();
                     view.setId( Integer.parseInt(writes[0]));
-                    view.setPressure(writes[1]);
-                    view.setTemperature(writes[2]);
-                    view.setHumidity(writes[3]);
-                    view.setCo2( writes[4]);
-                    view.setC2h2(writes[5]);
+                    view.setPressure(Integer.parseInt(writes[1]));
+                    view.setTemperature(Integer.parseInt(writes[2]));
+                    view.setHumidity(Integer.parseInt(writes[3]));
+                    view.setCo2( Integer.parseInt(writes[4]));
+                    view.setC2h2(Integer.parseInt(writes[5]));
                     view.setTime(Date.valueOf(writes[6]));
 
 
