@@ -10,6 +10,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.sql.Date;
+import java.sql.Time;
 
 
 //@Component
@@ -102,6 +103,7 @@ public class UpdateDatabase{
                     view.setCo2( writes[4]);
                     view.setC2h2(writes[5]);
                     view.setTime(Date.valueOf(writes[6]));
+
 
                     if(viewService1.queryById(Integer.parseInt(writes[0]))==null){
                         viewService1.addView(view);

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入可视化echarts图表js -->
     <script type="text/javascript" src="../js/echarts.min.js"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <!-- 引入 Bootstrap -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -15,13 +17,13 @@
     <div class="row clearfix">
         <div class="col-md-12 column">
             <div class="page-header">
-                <h1>
+                <h1 align="center">
                     监控端实现页面
                 </h1>
             </div>
         </div>
     </div>
-
+<div id="right" style="width: 80%; float: right">
     <div class="row clearfix">
         <div class="col-md-12 column">
             <div class="page-header">
@@ -60,6 +62,7 @@
         </div>
     </div>
     <div id="chartmain" style="width:600px; height: 400px;"></div>
+</div>
 </div>
 </body>
 <script type="text/javascript">

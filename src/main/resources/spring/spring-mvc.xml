@@ -19,6 +19,7 @@
     <mvc:annotation-driven />
     <mvc:resources mapping="/**" location="/img" />
     <mvc:resources mapping="/**" location="/js" />
+    <mvc:resources mapping="/**" location="/html" />
 
     <!-- 2.静态资源默认servlet配置
         (1)加入对静态资源的处理：js,gif,png

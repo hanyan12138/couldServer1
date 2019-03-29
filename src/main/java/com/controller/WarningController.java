@@ -51,4 +51,18 @@ public class WarningController {
             return "login";
         }
     }
+    @RequestMapping("/control")
+    public String base() {
+        return "control";
+    }
+
+    @RequestMapping(path = "/upload")
+    public String getIn(){
+        return "upload";
+    }
+
+    @RequestMapping(path = "/test")
+    public String test(){
+        return "frame";
+    }
 }
